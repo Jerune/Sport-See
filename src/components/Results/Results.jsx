@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { StoreContext } from "../../providers/StoreProvider";
 import { getUserData } from "../../services/dataManager";
+import Nutrients from "./Nutrients/Nutrients";
 
 export default function Results() {
   const [store] = useContext(StoreContext);
@@ -21,7 +22,7 @@ export default function Results() {
       </h2>
       <div className="charts">
         <div className="test1"></div>
-        <div className="test2"></div>
+        <Nutrients />
         <div className="test3"></div>
         <div className="test4"></div>
         <div className="test5"></div>

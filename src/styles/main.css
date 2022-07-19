@@ -102,7 +102,7 @@ ul {
 .results {
   display: flex;
   flex-direction: column;
-  padding: 68px 100px 0 100px;
+  padding: 50px 100px 0 100px;
   width: 100%;
 }
 .results_title {
@@ -159,4 +159,61 @@ ul {
   background-color: orange;
   grid-area: score;
   min-height: 100px;
+}
+
+.nutrients {
+  grid-area: nutrients;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.nutrients li {
+  width: 258px;
+  height: 124px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 32px;
+  margin-bottom: 39px;
+  background-color: #FBFBFB;
+  border-radius: 5px;
+}
+.nutrients li .icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 24px;
+}
+.nutrients li .icon img {
+  width: 19px;
+}
+.nutrients li:last-child {
+  margin-bottom: 0;
+}
+.nutrients h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #282D30;
+}
+.nutrients p {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #74798C;
+}
+.nutrients_calories {
+  background: rgba(255, 0, 0, 0.1);
+}
+.nutrients_proteines {
+  background: rgba(74, 184, 255, 0.1);
+}
+.nutrients_carbs {
+  background: rgba(227, 182, 6, 0.1);
+}
+.nutrients_fats {
+  background: rgba(253, 81, 129, 0.1);
 }/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,63 @@
+.nutrients{
+    grid-area: nutrients;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    li{
+        width: 258px;
+        height: 124px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 32px;
+        margin-bottom: 39px;
+        background-color: $color-backgrounds;
+        border-radius: 5px;
+        
+        .icon{
+        width: 60px;
+        height: 60px;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 24px;
+            img{
+            width: 19px; 
+            }
+        }
+
+        &:last-child{
+        margin-bottom: 0;
+    }
+    }
+
+    h3{
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: $color-chart-title;
+    }
+
+    p{
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: $color-chart-texts;
+    }
+
+    &_calories{
+        background: rgba(255, 0, 0, 0.1);
+    }
+    &_proteines{
+        background: rgba(74, 184, 255, 0.1);
+    }
+
+    &_carbs{
+        background: rgba(227, 182, 6, 0.1);
+    }
+
+    &_fats{
+        background: rgba(253, 81, 129, 0.1);
+    }
+}
