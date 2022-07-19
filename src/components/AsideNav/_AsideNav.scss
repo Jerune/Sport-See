@@ -1,0 +1,37 @@
+.asideNav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 50px;
+    width: 117px;
+    background-color: black;
+    nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 316px;
+        a{
+            width: 64px ;
+            height: 64px;
+            background-color: white;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                width: 32px;
+            }
+        }
+    }
+    .copyright{
+        color: white;
+        font-size: 0.75rem;
+        display: flex;
+        writing-mode: vertical-rl;
+        text-orientation: sideways-right;    
+        transform: rotate(-180deg);
+    }
+}

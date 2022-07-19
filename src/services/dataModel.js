@@ -2,7 +2,7 @@ const data = {
   user: {
     id: 0,
     userInfos: {
-      firstName: "test",
+      firstName: "",
       lastName: "",
       age: 0,
     },

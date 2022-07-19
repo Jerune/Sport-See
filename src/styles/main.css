@@ -14,9 +14,11 @@ body {
 #root {
   width: 100%;
   max-width: 1440px;
-  height: 100%;
-  max-height: 1024px;
   margin: 0 auto;
+  height: 100vh;
+  max-height: 1024px;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -37,7 +39,8 @@ ul {
 
 .headerNav {
   background-color: black;
-  height: 91px;
+  min-height: 91px;
+  height: 10%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -49,4 +52,111 @@ ul {
 }
 .headerNav img {
   height: 57px;
+}
+
+.asideNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 50px;
+  width: 117px;
+  background-color: black;
+}
+.asideNav nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 316px;
+}
+.asideNav nav a {
+  width: 64px;
+  height: 64px;
+  background-color: white;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.asideNav nav a img {
+  width: 32px;
+}
+.asideNav .copyright {
+  color: white;
+  font-size: 0.75rem;
+  display: flex;
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+  text-orientation: sideways-right;
+  transform: rotate(-180deg);
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  padding: 68px 100px 0 100px;
+  width: 100%;
+}
+.results_title {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.results_title span {
+  color: #FF0101;
+}
+.results_subTitle {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.charts {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "activity activity activity nutrients" "duration profile score nutrients";
+  gap: 30px;
+}
+
+.charts > div {
+  min-height: 100px;
+}
+
+.test1 {
+  background-color: blue;
+  grid-area: activity;
+  min-height: 100px;
+}
+
+.test2 {
+  background-color: red;
+  grid-area: nutrients;
+  min-height: 100px;
+}
+
+.test3 {
+  background-color: yellow;
+  grid-area: duration;
+  min-height: 100px;
+}
+
+.test4 {
+  background-color: green;
+  grid-area: profile;
+  min-height: 100px;
+}
+
+.test5 {
+  background-color: orange;
+  grid-area: score;
+  min-height: 100px;
 }/*# sourceMappingURL=main.css.map */

@@ -1,6 +1,7 @@
 .headerNav{
     background-color: black;
-    height: 91px;
+    min-height: 91px;
+    height: 10%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
