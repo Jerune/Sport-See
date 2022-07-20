@@ -1,6 +1,5 @@
-import React, { useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { StoreContext } from "../../../providers/StoreProvider";
-import { getUserData } from "../../../services/dataManager";
 
 // Icons
 import caloriesIcon from "../../../assets/icons/calories-icon.png";
