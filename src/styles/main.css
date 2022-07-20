@@ -145,12 +145,6 @@ ul {
   min-height: 100px;
 }
 
-.test3 {
-  background-color: yellow;
-  grid-area: duration;
-  min-height: 100px;
-}
-
 .test4 {
   background-color: green;
   grid-area: profile;
@@ -218,4 +212,41 @@ ul {
 }
 .nutrients_fats {
   background: rgba(253, 81, 129, 0.1);
+}
+
+.sessionDuration {
+  background-color: #FF0101;
+  grid-area: duration;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  border-radius: 5px;
+  height: 263px;
+  width: 258px;
+  position: relative;
+  padding-top: 75px;
+}
+.sessionDuration h2 {
+  position: absolute;
+  top: 29px;
+  left: 34px;
+  width: 147px;
+  opacity: 0.5;
+  font-size: 0.938rem;
+  line-height: 24px;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+.sessionDuration .tooltip {
+  width: 39px;
+  height: 25px;
+  background-color: #FFFFFF;
+  font-size: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recharts-cartesian-axis-tick {
+  font-size: 0.75rem;
+  font-family: "Roboto", sans-serif;
+  opacity: 0.5;
 }/*# sourceMappingURL=main.css.map */

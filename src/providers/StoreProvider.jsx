@@ -5,6 +5,7 @@ const StoreContext = createContext({});
 let store = {
   user: {},
   sessions: [],
+  activity: [],
   set: (data) => {},
 };
 

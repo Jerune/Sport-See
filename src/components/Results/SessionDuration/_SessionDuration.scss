@@ -1,0 +1,37 @@
+.sessionDuration{
+    background-color: $color-primary;
+    grid-area: duration;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+    border-radius: 5px;
+    height: 263px;
+    width: 258px;
+    position: relative;
+    padding-top: 75px;
+    h2{
+        position: absolute;
+        top: 29px;
+        left: 34px;
+        width: 147px;
+        opacity: 0.5;
+        font-size: 0.938rem;
+        line-height: 24px;
+        font-weight: 500;
+        color: #FFFFFF;
+    }
+    .tooltip{
+        width: 39px;
+        height: 25px;
+        background-color: #FFFFFF;
+        font-size: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    };
+
+}
+
+.recharts-cartesian-axis-tick {    
+    font-size: 0.75rem;
+    font-family: 'Roboto', sans-serif;
+    opacity: 0.5;
+}

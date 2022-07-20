@@ -10,7 +10,7 @@ async function getUserData() {
 
 async function getSessionsData() {
   const response = await fetch(
-    "https://calm-gorge-80201.herokuapp.com/user/12/activity"
+    "https://calm-gorge-80201.herokuapp.com/user/12/average-sessions"
   );
   const rawData = await response.json();
   store.set({ ...store, sessions: rawData.data.sessions });
