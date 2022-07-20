@@ -1,11 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import {
-  Radar,
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis,
-} from "recharts";
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from "recharts";
 import { StoreContext } from "../../../providers/StoreProvider";
 import { getPerformanceData } from "../../../services/dataManager";
 

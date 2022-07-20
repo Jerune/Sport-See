@@ -129,16 +129,6 @@ ul {
   gap: 30px;
 }
 
-.charts > div {
-  min-height: 100px;
-}
-
-.test5 {
-  background-color: orange;
-  grid-area: score;
-  min-height: 100px;
-}
-
 .nutrients {
   grid-area: nutrients;
   display: flex;
@@ -246,4 +236,14 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.score {
+  grid-area: score;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #FBFBFB;
+  border-radius: 5px;
 }/*# sourceMappingURL=main.css.map */

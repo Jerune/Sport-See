@@ -5,6 +5,7 @@ import Activity from "./Activity/Activity";
 import Nutrients from "./Nutrients/Nutrients";
 import SessionDuration from "./SessionDuration/SessionDuration";
 import Performance from "./Performance/Performance";
+import Score from "./Score/Score";
 
 export default function Results() {
   // @ts-ignore
@@ -31,7 +32,7 @@ export default function Results() {
         <Nutrients />
         <SessionDuration />
         <Performance />
-        <div className="test5"></div>
+        <Score />
       </div>
     </section>
   );
