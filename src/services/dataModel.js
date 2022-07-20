@@ -32,6 +32,22 @@ const data = {
     { day: "2020-01-01", kilogram: 0, calories: 0 },
     { day: "2020-01-01", kilogram: 0, calories: 0 },
   ],
+  kind: {
+    1: "cardio",
+    2: "energy",
+    3: "endurance",
+    4: "strength",
+    5: "speed",
+    6: "intensity",
+  },
+  performance: [
+    { value: 0, kind: 1 },
+    { value: 0, kind: 2 },
+    { value: 0, kind: 3 },
+    { value: 0, kind: 4 },
+    { value: 0, kind: 5 },
+    { value: 0, kind: 6 },
+  ],
 };
 
 export default data;

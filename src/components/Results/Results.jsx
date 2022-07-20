@@ -4,8 +4,10 @@ import { getUserData } from "../../services/dataManager";
 import Activity from "./Activity/Activity";
 import Nutrients from "./Nutrients/Nutrients";
 import SessionDuration from "./SessionDuration/SessionDuration";
+import Performance from "./Performance/Performance";
 
 export default function Results() {
+  // @ts-ignore
   const [store] = useContext(StoreContext);
   useEffect(() => {
     const refreshData = async () => {
@@ -28,7 +30,7 @@ export default function Results() {
         <Activity />
         <Nutrients />
         <SessionDuration />
-        <div className="test4"></div>
+        <Performance />
         <div className="test5"></div>
       </div>
     </section>

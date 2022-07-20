@@ -6,11 +6,14 @@ let store = {
   user: {},
   sessions: [],
   activity: [],
+  kind: {},
+  performance: [],
   set: (data) => {},
 };
 
 function StoreProvider({ children }) {
   const [get, set] = useState(defaultData);
+  // @ts-ignore
   store = get;
   store.set = set;
 
