@@ -8,6 +8,7 @@ import carbsIcon from "../../../assets/icons/carbs-icon.png";
 import fatsIcon from "../../../assets/icons/fats-icon.png";
 
 export default function Nutrients() {
+  // @ts-ignore
   const [store] = useContext(StoreContext);
   const nutrientsData = store.user.keyData;
 

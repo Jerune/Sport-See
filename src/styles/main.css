@@ -14,8 +14,10 @@ body {
 #root {
   width: 100%;
   max-width: 1440px;
+  min-width: 1024px;
   margin: 0 auto;
   height: 100vh;
+  min-height: 780px;
   max-height: 1024px;
   display: flex;
   flex-direction: column;
@@ -57,9 +59,9 @@ ul {
 .asideNav {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding-top: 50px;
+  padding-block: 250px 50px;
   width: 117px;
   background-color: black;
 }
@@ -102,7 +104,7 @@ ul {
 .results {
   display: flex;
   flex-direction: column;
-  padding: 50px 100px 0 100px;
+  padding: 50px 90px;
   width: 100%;
 }
 .results_title {
