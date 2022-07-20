@@ -14,6 +14,15 @@ const data = {
       lipidCount: 0,
     },
   },
+  sessions: [
+    { day: "2020-01-01", kilogram: 0, calories: 0 },
+    { day: "2020-01-01", kilogram: 0, calories: 0 },
+    { day: "2020-01-01", kilogram: 0, calories: 0 },
+    { day: "2020-01-01", kilogram: 0, calories: 0 },
+    { day: "2020-01-01", kilogram: 0, calories: 0 },
+    { day: "2020-01-01", kilogram: 0, calories: 0 },
+    { day: "2020-01-01", kilogram: 0, calories: 0 },
+  ],
 };
 
 export default data;

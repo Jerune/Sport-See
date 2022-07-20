@@ -5,8 +5,15 @@ async function getUserData() {
     "https://calm-gorge-80201.herokuapp.com/user/12"
   );
   const rawData = await response.json();
-  console.log(rawData);
-  store.set({ user: rawData.data });
+  store.set({ ...store, user: rawData.data });
 }
 
-export { getUserData };
+async function getSessionsData() {
+  const response = await fetch(
+    "https://calm-gorge-80201.herokuapp.com/user/12/activity"
+  );
+  const rawData = await response.json();
+  store.set({ ...store, sessions: rawData.data.sessions });
+}
+
+export { getUserData, getSessionsData };

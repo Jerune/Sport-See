@@ -40,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "babel-plugin-recharts": "^2.0.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1"
   }

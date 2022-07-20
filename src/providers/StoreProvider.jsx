@@ -2,14 +2,15 @@ import React, { useState, createContext } from "react";
 import defaultData from "../services/dataModel";
 const StoreContext = createContext({});
 
-const store = {
-  data: {},
+let store = {
+  user: {},
+  sessions: [],
   set: (data) => {},
 };
 
 function StoreProvider({ children }) {
   const [get, set] = useState(defaultData);
-  store.data = get;
+  store = get;
   store.set = set;
 
   return (

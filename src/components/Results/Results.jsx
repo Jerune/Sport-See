@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { StoreContext } from "../../providers/StoreProvider";
 import { getUserData } from "../../services/dataManager";
 import Nutrients from "./Nutrients/Nutrients";
+import SessionDuration from "./SessionDuration/SessionDuration";
 
 export default function Results() {
   const [store] = useContext(StoreContext);
@@ -11,6 +12,8 @@ export default function Results() {
     };
     refreshData();
   }, []);
+
+  console.log(store);
 
   return (
     <section className="results">
@@ -23,7 +26,7 @@ export default function Results() {
       <div className="charts">
         <div className="test1"></div>
         <Nutrients />
-        <div className="test3"></div>
+        <SessionDuration />
         <div className="test4"></div>
         <div className="test5"></div>
       </div>
