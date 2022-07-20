@@ -249,4 +249,8 @@ ul {
   font-size: 0.75rem;
   font-family: "Roboto", sans-serif;
   opacity: 0.5;
+}
+
+.activity {
+  grid-area: activity;
 }/*# sourceMappingURL=main.css.map */

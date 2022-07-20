@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import { StoreContext } from "../../providers/StoreProvider";
 import { getUserData } from "../../services/dataManager";
+import Activity from "./Activity/Activity";
 import Nutrients from "./Nutrients/Nutrients";
 import SessionDuration from "./SessionDuration/SessionDuration";
 
@@ -24,7 +25,7 @@ export default function Results() {
         Félicitation ! Vous avez explosé vos objectifs hier 👏
       </h2>
       <div className="charts">
-        <div className="test1"></div>
+        <Activity />
         <Nutrients />
         <SessionDuration />
         <div className="test4"></div>
