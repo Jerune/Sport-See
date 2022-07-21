@@ -48,23 +48,34 @@ export default function SessionDuration() {
   return (
     <section className="sessionDuration">
       <h2>Durée moyenne des sessions</h2>
-      <LineChart width={263} height={175} data={store.sessions}>
+      <LineChart data={store.sessions} width={263} height={175}>
         <XAxis
-          axisLine={false}
-          tickLine={false}
-          padding={{ left: 20, right: 20 }}
-          tickMargin={10}
           dataKey="day"
-          stroke="#FFFFFF"
+          stroke="rgba(255, 255, 255, 0.6)"
+          axisLine={false}
+          dy={10}
+          tickLine={false}
           tickFormatter={formatXAxis}
+          padding={{ left: 20, right: 20 }}
         />
-        <Tooltip content={<CustomTooltip />} />
         <Line
-          type="monotoneX"
           dataKey="sessionLength"
-          stroke="#FFFFFF"
+          type={"monotone"}
+          stroke="rgba(255, 255, 255, 0.6)"
           strokeWidth={2}
-          activeDot={{ r: 3 }}
+          dot={false}
+          activeDot={{
+            stroke: "#FFFFFF",
+            strokeWidth: 5,
+            r: 3,
+          }}
+        />
+        <Tooltip
+          content={<CustomTooltip />}
+          cursor={{
+            stroke: "rgba(0, 0, 0, 0.1)",
+            strokeWidth: 32,
+          }}
         />
       </LineChart>
     </section>
