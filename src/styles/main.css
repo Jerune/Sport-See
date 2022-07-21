@@ -63,6 +63,7 @@ ul {
   align-items: center;
   padding-block: 250px 50px;
   width: 117px;
+  min-width: 117px;
   background-color: black;
 }
 .asideNav nav {
@@ -254,7 +255,7 @@ ul {
 }
 .score_title {
   position: absolute;
-  font-size: 15px;
+  font-size: 0.938rem;
   font-weight: 500;
   margin: 0;
   top: 20px;
@@ -268,13 +269,15 @@ ul {
 }
 .score_results_percentage {
   text-align: center;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 1.625rem;
+  line-height: 1;
+  font-weight: 700;
   color: #282D30;
-  margin: 0;
+  margin-bottom: 3px;
 }
 .score_results_text {
   font-size: 1rem;
+  line-height: 1.6;
   font-weight: 500;
   color: #74798C;
   text-align: center;

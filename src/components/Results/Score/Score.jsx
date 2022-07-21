@@ -13,12 +13,11 @@ export default function Score() {
 
   const data = [
     {
-      score: "0.90",
+      score: store.user.score,
     },
   ];
 
   function calculatePercent(data) {
-    console.log(data);
     const score = Number(data[0].score);
     return Math.round(score * 100);
   }
@@ -31,17 +30,20 @@ export default function Score() {
         <RadialBarChart
           cx="50%"
           cy="50%"
-          innerRadius="90%"
+          innerRadius="72%"
           data={data}
           startAngle={90}
           endAngle={450}
+          barGap={0}
+          width={160}
+          height={160}
         >
           <RadialBar
-            minAngle={15}
             dataKey="score"
             fill="#FF0000"
             cornerRadius={25}
-            barSize={10}
+            // @ts-ignore
+            barSize={11}
           />
           <PolarAngleAxis type="number" domain={[0, 1]} tick={false} />
           <circle cx="50%" cy="50%" fill="white" r="85"></circle>
@@ -57,23 +59,4 @@ export default function Score() {
       </div>
     </section>
   );
-}
-
-{
-  /* <RadialBarChart
-        width={258}
-        height={263}
-        cx="50%"
-        cy="50%"
-        innerRadius="10%"
-        outerRadius="80%"
-        barSize={10}
-        data={data}
-      >
-        <RadialBar
-          label={{ position: "insideStart", fill: "#fff" }}
-          background
-          dataKey="score"
-        />
-      </RadialBarChart> */
 }
