@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { RadialBarChart, RadialBar, Legend } from "recharts";
+import { RadialBarChart, RadialBar } from "recharts";
 import { StoreContext } from "../../../providers/StoreProvider";
 
 export default function Score() {
