@@ -1,83 +1,111 @@
 import React, { useContext } from "react";
-import { Bar, BarChart, CartesianGrid, Tooltip, XAxis, YAxis } from "recharts";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+} from "recharts";
 import { StoreContext } from "../../../providers/StoreProvider";
-
-function CustomTooltip({ active, payload }) {
-  if (active && payload) {
-    return (
-      <div>
-        <p>{`${payload[0].value} kg`}</p>
-        <p>{`${payload[1].value} kCal`}</p>
-      </div>
-    );
-  }
-
-  return null;
-}
 
 export default function Activity() {
   // @ts-ignore
   const [store] = useContext(StoreContext);
 
+  function xAxisTickFormat(value) {
+    return value.split("-")[2].split("0")[1];
+  }
+
+  function CustomTooltip({ payload, active }) {
+    if (active) {
+      return (
+        <div className="activity_tooltip">
+          <div>{`${payload[0].value}`}kg</div>
+          <div>{`${payload[1].value}`}Kcal</div>
+        </div>
+      );
+    }
+    return null;
+  }
+
   return (
     <section className="activity">
+      <h2 className="activity_title">Activité quotidienne</h2>
       <BarChart
-        width={835}
-        height={320}
         data={store.activity}
+        width={820}
+        height={280}
         margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
+          top: 10,
+          right: 5,
+          left: 5,
+          bottom: 10,
         }}
-        barGap={8}
-        barCategoryGap="35%"
       >
-        <CartesianGrid strokeDasharray="3 3" vertical={false} />
+        <CartesianGrid
+          strokeDasharray="2"
+          vertical={false}
+          // horizontalPoints={[60, 75, 90]}
+        />
         <XAxis
+          className="activity_axis"
           dataKey="day"
-          dy={16}
-          padding={{ left: -48, right: -48 }}
-          tickLine={false}
-          tick={{ fontSize: 14, fontWeight: 500 }}
+          tickFormatter={xAxisTickFormat}
+          interval="preserveStartEnd"
+          tickSize={0}
+          tickMargin={25}
+          tick={{ fontSize: "14px" }}
+          stroke="#9B9EAC"
         />
         <YAxis
-          yAxisId="kg"
-          dataKey="kilogram"
-          domain={["dataMin - 1", "dataMax + 2"]}
-          allowDecimals={false}
-          dx={48}
-          orientation="right"
-          axisLine={false}
-          tickLine={false}
-        />
-        <YAxis
-          yAxisId="cal"
           dataKey="calories"
-          domain={[0, "dataMax + 50"]}
+          yAxisId="left"
+          orientation="left"
           hide={true}
         />
-        <Bar
-          yAxisId="kg"
+        <YAxis
+          className="activityYAxis"
           dataKey="kilogram"
-          maxBarSize={8}
-          radius={[50, 50, 0, 0]}
-          fill="#282D30"
+          yAxisId="right"
+          orientation="right"
+          type="number"
+          domain={["dataMin -1", "dataMax"]}
+          tickCount={3}
+          tickSize={0}
+          tick={{ fontSize: "14px" }}
+          axisLine={false}
+          tickMargin={30}
+          width={45}
+          stroke="#9B9EAC"
+        />
+        <Tooltip content={<CustomTooltip />} />
+        <Legend
+          verticalAlign="top"
+          align="right"
+          height={90}
+          iconType="circle"
+          iconSize={8}
+          formatter={(value) => (
+            <span className="activity_legend">{value}</span>
+          )}
         />
         <Bar
-          yAxisId="cal"
-          dataKey="calories"
-          maxBarSize={8}
-          radius={[50, 50, 0, 0]}
-          fill="#E60000"
+          name="Poids (kg)"
+          dataKey="kilogram"
+          yAxisId="right"
+          fill="#282D30"
+          radius={[25, 25, 0, 0]}
+          barSize={7}
         />
-        <Tooltip
-          // @ts-ignore
-          content={<CustomTooltip />}
-          cursor={{
-            fill: "rgba(0, 0, 0, 0.1)",
-          }}
+        <Bar
+          name="Calories brûlées (kCal)"
+          dataKey="calories"
+          yAxisId="left"
+          fill="#E60000"
+          radius={[25, 25, 0, 0]}
+          barSize={7}
         />
       </BarChart>
     </section>

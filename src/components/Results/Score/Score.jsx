@@ -10,8 +10,7 @@ import { StoreContext } from "../../../providers/StoreProvider";
 export default function Score() {
   // @ts-ignore
   const [store] = useContext(StoreContext);
-
-  const data = [
+  const ScoreData = [
     {
       score: store.user.score,
     },
@@ -21,7 +20,7 @@ export default function Score() {
     const score = Number(data[0].score);
     return Math.round(score * 100);
   }
-  const scorePercent = calculatePercent(data);
+  const scorePercent = calculatePercent(ScoreData);
 
   return (
     <section className="score">
@@ -31,7 +30,7 @@ export default function Score() {
           cx="50%"
           cy="50%"
           innerRadius="72%"
-          data={data}
+          data={ScoreData}
           startAngle={90}
           endAngle={450}
           barGap={0}

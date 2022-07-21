@@ -13,7 +13,6 @@ async function getSessionsData() {
     "https://calm-gorge-80201.herokuapp.com/user/12/average-sessions"
   );
   const rawData = await response.json();
-  console.log(store.get.sessions, rawData.data.sessions);
 
   store.set({ sessions: rawData.data.sessions });
 }

@@ -25,8 +25,6 @@ export default function Results() {
     refreshData();
   }, []);
 
-  console.log(store);
-
   return (
     <section className="results">
       <h1 className="results_title">
