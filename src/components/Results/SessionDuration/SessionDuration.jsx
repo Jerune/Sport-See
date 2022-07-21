@@ -18,7 +18,7 @@ export default function SessionDuration() {
     return null;
   };
 
-  const formatXAxis = (tickItem) => {
+  function formatXAxis(tickItem) {
     switch (tickItem) {
       case 1:
         return "L";
@@ -37,12 +37,12 @@ export default function SessionDuration() {
       default:
         return "";
     }
-  };
+  }
 
   return (
     <section className="sessionDuration">
       <h2>Durée moyenne des sessions</h2>
-      <LineChart data={store.sessions} width={263} height={175}>
+      <LineChart data={store.sessions} width={261} height={175}>
         <XAxis
           dataKey="day"
           stroke="rgba(255, 255, 255, 0.6)"
@@ -50,7 +50,7 @@ export default function SessionDuration() {
           dy={10}
           tickLine={false}
           tickFormatter={formatXAxis}
-          padding={{ left: 20, right: 20 }}
+          padding={{ left: 10, right: 10 }}
         />
         <Line
           dataKey="sessionLength"
@@ -69,7 +69,8 @@ export default function SessionDuration() {
           content={<CustomTooltip />}
           cursor={{
             stroke: "rgba(0, 0, 0, 0.1)",
-            strokeWidth: 32,
+            strokeWidth: 50,
+            height: "1000px",
           }}
         />
       </LineChart>

@@ -217,10 +217,15 @@ ul {
   justify-content: center;
 }
 
-.recharts-cartesian-axis-tick {
+.recharts-surface {
+  padding: 0;
+  margin: 0;
+}
+
+.recharts-cartesian-axis-ticks {
   font-size: 0.75rem;
-  font-family: "Roboto", sans-serif;
-  opacity: 0.5;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .activity {
@@ -246,4 +251,32 @@ ul {
   position: relative;
   background-color: #FBFBFB;
   border-radius: 5px;
+}
+.score_title {
+  position: absolute;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  top: 20px;
+  left: 20px;
+}
+.score_results {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  margin: 0;
+}
+.score_results_percentage {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #282D30;
+  margin: 0;
+}
+.score_results_text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #74798C;
+  text-align: center;
+  margin: 0;
 }/*# sourceMappingURL=main.css.map */

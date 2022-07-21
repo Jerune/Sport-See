@@ -6,4 +6,32 @@
     position: relative;
     background-color: #FBFBFB;
     border-radius: 5px;
+    &_title{
+        position: absolute;
+        font-size: 15px;
+        font-weight: 500;
+        margin: 0;
+        top: 20px;
+        left: 20px;
+    }
+    &_results{
+        position: absolute;
+        top: 40%;
+        width: 100%;
+        margin: 0;
+        &_percentage{
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+            color: #282D30;
+            margin: 0;
+        }
+        &_text{
+            font-size: 1rem;
+            font-weight: 500;
+            color: #74798C;
+            text-align: center;
+            margin: 0;
+        }
+    }
 }
