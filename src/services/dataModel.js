@@ -34,11 +34,11 @@ const data = {
   ],
   kind: {
     1: "Cardio",
-    2: "Energy",
+    2: "Energie",
     3: "Endurance",
-    4: "Strength",
-    5: "Speed",
-    6: "Intensity",
+    4: "Force",
+    5: "Vitesse",
+    6: "Intensité",
   },
   performance: [
     { value: 0, kind: 1 },

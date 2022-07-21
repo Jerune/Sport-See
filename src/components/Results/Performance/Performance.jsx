@@ -8,7 +8,7 @@ export default function Performance() {
 
   return (
     <section className="performance">
-      <RadarChart width={259} height={262} data={store.performance}>
+      <RadarChart width={280} height={263} data={store.performance}>
         <PolarGrid radialLines={false} />
         <PolarAngleAxis
           dataKey="kind"
@@ -23,7 +23,7 @@ export default function Performance() {
         <Radar
           dataKey="value"
           fill="#FF0101B2"
-          fillOpacity={0.7}
+          fillOpacity={0.8}
           stroke="transparent"
         />
       </RadarChart>
