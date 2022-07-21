@@ -1,7 +1,6 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Bar, BarChart, CartesianGrid, Tooltip, XAxis, YAxis } from "recharts";
 import { StoreContext } from "../../../providers/StoreProvider";
-import { getActivityData } from "../../../services/dataManager";
 
 function CustomTooltip({ active, payload }) {
   if (active && payload) {
@@ -19,12 +18,6 @@ function CustomTooltip({ active, payload }) {
 export default function Activity() {
   // @ts-ignore
   const [store] = useContext(StoreContext);
-  useEffect(() => {
-    const refreshData = async () => {
-      await getActivityData();
-    };
-    refreshData();
-  }, []);
 
   return (
     <section className="activity">

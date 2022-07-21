@@ -5,7 +5,7 @@ async function getUserData() {
     "https://calm-gorge-80201.herokuapp.com/user/12"
   );
   const rawData = await response.json();
-  store.set({ ...store, user: rawData.data });
+  store.set({ user: rawData.data });
 }
 
 async function getSessionsData() {
@@ -13,7 +13,9 @@ async function getSessionsData() {
     "https://calm-gorge-80201.herokuapp.com/user/12/average-sessions"
   );
   const rawData = await response.json();
-  store.set({ ...store, sessions: rawData.data.sessions });
+  console.log(store.get.sessions, rawData.data.sessions);
+
+  store.set({ sessions: rawData.data.sessions });
 }
 
 async function getActivityData() {
@@ -21,7 +23,7 @@ async function getActivityData() {
     "https://calm-gorge-80201.herokuapp.com/user/12/activity"
   );
   const rawData = await response.json();
-  store.set({ ...store, activity: rawData.data.sessions });
+  store.set({ activity: rawData.data.sessions });
 }
 
 async function getPerformanceData() {
@@ -30,10 +32,10 @@ async function getPerformanceData() {
   );
   const rawData = await response.json();
   const adjustedData = rawData.data.data.map((activity) => {
-    return { ...activity, kind: store.kind[activity.kind] };
+    return { ...activity, kind: store.get.kind[activity.kind] };
   });
 
-  store.set({ ...store, performance: adjustedData });
+  store.set({ performance: adjustedData.reverse() });
 }
 
 export { getUserData, getSessionsData, getActivityData, getPerformanceData };

@@ -1,17 +1,10 @@
 import { StoreContext } from "../../../providers/StoreProvider";
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { LineChart, Line, XAxis, Tooltip } from "recharts";
-import { getSessionsData } from "../../../services/dataManager";
 
 export default function SessionDuration() {
   // @ts-ignore
   const [store] = useContext(StoreContext);
-  useEffect(() => {
-    const refreshData = async () => {
-      await getSessionsData();
-    };
-    refreshData();
-  }, []);
 
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {

@@ -1,6 +1,11 @@
 import React, { useEffect, useContext } from "react";
 import { StoreContext } from "../../providers/StoreProvider";
-import { getUserData } from "../../services/dataManager";
+import {
+  getUserData,
+  getSessionsData,
+  getActivityData,
+  getPerformanceData,
+} from "../../services/dataManager";
 import Activity from "./Activity/Activity";
 import Nutrients from "./Nutrients/Nutrients";
 import SessionDuration from "./SessionDuration/SessionDuration";
@@ -13,6 +18,9 @@ export default function Results() {
   useEffect(() => {
     const refreshData = async () => {
       await getUserData();
+      await getActivityData();
+      await getSessionsData();
+      await getPerformanceData();
     };
     refreshData();
   }, []);

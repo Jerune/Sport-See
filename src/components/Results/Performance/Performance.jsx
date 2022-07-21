@@ -1,21 +1,14 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from "recharts";
 import { StoreContext } from "../../../providers/StoreProvider";
-import { getPerformanceData } from "../../../services/dataManager";
 
 export default function Performance() {
   // @ts-ignore
   const [store] = useContext(StoreContext);
-  useEffect(() => {
-    const refreshData = async () => {
-      await getPerformanceData();
-    };
-    refreshData();
-  }, []);
 
   return (
     <section className="performance">
-      <RadarChart width={259} height={263} data={store.performance}>
+      <RadarChart width={259} height={262} data={store.performance}>
         <PolarGrid radialLines={false} />
         <PolarAngleAxis
           dataKey="kind"
