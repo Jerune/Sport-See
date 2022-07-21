@@ -80,6 +80,7 @@ export default function Activity() {
           fill="#E60000"
         />
         <Tooltip
+          // @ts-ignore
           content={<CustomTooltip />}
           cursor={{
             fill: "rgba(0, 0, 0, 0.1)",
@@ -88,25 +89,4 @@ export default function Activity() {
       </BarChart>
     </section>
   );
-}
-
-{
-  /* <BarChart
-        width={835}
-        height={320}
-        data={store.activity}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="day" />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="kilogram" fill="#282D30" />
-        <Bar dataKey="calories" fill="#E60000" />
-      </BarChart> */
 }

@@ -4,6 +4,7 @@ import { LineChart, Line, XAxis, Tooltip } from "recharts";
 import { getSessionsData } from "../../../services/dataManager";
 
 export default function SessionDuration() {
+  // @ts-ignore
   const [store] = useContext(StoreContext);
   useEffect(() => {
     const refreshData = async () => {
@@ -71,6 +72,7 @@ export default function SessionDuration() {
           }}
         />
         <Tooltip
+          // @ts-ignore
           content={<CustomTooltip />}
           cursor={{
             stroke: "rgba(0, 0, 0, 0.1)",
