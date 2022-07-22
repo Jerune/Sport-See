@@ -20,22 +20,25 @@ async function getAPIData(id, type) {
   }
 
   const response = await fetch(apiURI);
-  const rawData = await response.json();
-
-  let adjustedData = [];
-  if (type === "performance") {
-    adjustedData = rawData.data.data.map((activity) => {
-      return { ...activity, kind: store.get.kind[activity.kind] };
+  if (response.status === 200) {
+    const rawData = await response.json();
+    let adjustedData = [];
+    if (type === "performance") {
+      adjustedData = rawData.data.data.map((activity) => {
+        return { ...activity, kind: store.get.kind[activity.kind] };
+      });
+    }
+    store.set({
+      [type]:
+        type === "user"
+          ? rawData.data
+          : type === "performance"
+          ? adjustedData.reverse()
+          : rawData.data.sessions,
     });
+  } else {
+    console.log("Error when trying to get data:", response.status);
   }
-  store.set({
-    [type]:
-      type === "user"
-        ? rawData.data
-        : type === "performance"
-        ? adjustedData.reverse()
-        : rawData.data.sessions,
-  });
 }
 
 export { getAPIData };
