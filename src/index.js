@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import HeaderNav from "./components/HeaderNav/HeaderNav";
+import NotFound from "./NotFound";
 import { StoreProvider } from "./providers/StoreProvider";
 import "./styles/main.css";
 
@@ -15,6 +16,7 @@ root.render(
         <HeaderNav />
         <Routes>
           <Route path="/user/:userId" element={<App />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </StoreProvider>

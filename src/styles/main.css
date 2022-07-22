@@ -39,6 +39,25 @@ ul {
   margin: 0;
 }
 
+.notFound {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.notFound h1 {
+  font-size: 15rem;
+  font-weight: 700;
+  color: #FF0101;
+}
+.notFound h2 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #74798C;
+}
+
 .headerNav {
   background-color: black;
   min-height: 91px;
