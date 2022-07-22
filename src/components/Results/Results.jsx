@@ -12,18 +12,18 @@ import SessionDuration from "./SessionDuration/SessionDuration";
 import Performance from "./Performance/Performance";
 import Score from "./Score/Score";
 
-export default function Results() {
+export default function Results({ id }) {
   // @ts-ignore
   const [store] = useContext(StoreContext);
   useEffect(() => {
     const refreshData = async () => {
-      await getUserData();
-      await getActivityData();
-      await getSessionsData();
-      await getPerformanceData();
+      await getUserData(id);
+      await getActivityData(id);
+      await getSessionsData(id);
+      await getPerformanceData(id);
     };
     refreshData();
-  }, []);
+  }, [id]);
 
   return (
     <section className="results">

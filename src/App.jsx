@@ -1,20 +1,16 @@
 import React, { useEffect } from "react";
+import { useParams, Navigate } from "react-router-dom";
 import { getUserData } from "./services/dataManager";
 import AsideNav from "./components/AsideNav/AsideNav";
 import Results from "./components/Results/Results";
 
 function App() {
-  useEffect(() => {
-    const refreshData = async () => {
-      await getUserData();
-    };
-    refreshData();
-  }, []);
+  let params = useParams();
 
   return (
     <main className="main">
       <AsideNav />
-      <Results />
+      <Results id={params} />
     </main>
   );
 }
