@@ -1,9 +1,9 @@
+// @ts-nocheck
 import { StoreContext } from "../../../providers/StoreProvider";
 import React, { useContext } from "react";
-import { LineChart, Line, XAxis, Tooltip } from "recharts";
+import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 export default function SessionDuration() {
-  // @ts-ignore
   const [store] = useContext(StoreContext);
 
   const CustomTooltip = ({ active, payload }) => {
@@ -39,41 +39,61 @@ export default function SessionDuration() {
     }
   }
 
+  const sessionElement = document.querySelector(".sessionDuration");
+
+  function mouseMove(e) {
+    if (e.isTooltipActive) {
+      let windowWidth = sessionElement.offsetWidth;
+      let mouseXpercent = Math.floor(
+        (e.activeCoordinate.x / windowWidth) * 100
+      );
+      sessionElement.style.background = `linear-gradient(90deg, rgba(255,0,0,1) ${mouseXpercent}%, rgba(230,1,0,1) ${mouseXpercent}%`;
+    }
+  }
+
+  function mouseOut() {
+    sessionElement.style.background = "#FF0101";
+  }
+
   return (
     <section className="sessionDuration">
       <h2>Durée moyenne des sessions</h2>
-      <LineChart data={store.sessions} width={261} height={175}>
-        <XAxis
-          dataKey="day"
-          stroke="rgba(255, 255, 255, 0.6)"
-          axisLine={false}
-          dy={10}
-          tickLine={false}
-          tickFormatter={formatXAxis}
-          padding={{ left: 10, right: 10 }}
-        />
-        <Line
-          dataKey="sessionLength"
-          type={"monotone"}
-          stroke="rgba(255, 255, 255, 0.6)"
-          strokeWidth={2}
-          dot={false}
-          activeDot={{
-            stroke: "#FFFFFF",
-            strokeWidth: 5,
-            r: 3,
-          }}
-        />
-        <Tooltip
-          // @ts-ignore
-          content={<CustomTooltip />}
-          cursor={{
-            stroke: "rgba(0, 0, 0, 0.1)",
-            strokeWidth: 50,
-            height: "1000px",
-          }}
-        />
-      </LineChart>
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart
+          data={store.sessions}
+          width={261}
+          height={175}
+          onMouseMove={mouseMove}
+          onMouseOut={mouseOut}
+        >
+          <XAxis
+            dataKey="day"
+            stroke="rgba(255, 255, 255, 0.6)"
+            axisLine={false}
+            dy={10}
+            tickLine={false}
+            tickFormatter={formatXAxis}
+            padding={{ left: 10, right: 10 }}
+          />
+          <Line
+            dataKey="sessionLength"
+            type={"monotone"}
+            stroke="rgba(255, 255, 255, 0.6)"
+            strokeWidth={2}
+            dot={false}
+            activeDot={{
+              stroke: "#FFFFFF",
+              strokeWidth: 5,
+              r: 3,
+            }}
+          />
+          <Tooltip
+            // @ts-ignore
+            content={<CustomTooltip />}
+            cursor={false}
+          />
+        </LineChart>
+      </ResponsiveContainer>
     </section>
   );
 }
