@@ -34,8 +34,6 @@ export default function Score() {
           startAngle={90}
           endAngle={450}
           barGap={0}
-          width={160}
-          height={160}
         >
           <RadialBar
             dataKey="score"

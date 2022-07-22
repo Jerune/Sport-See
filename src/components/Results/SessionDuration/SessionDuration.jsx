@@ -61,8 +61,6 @@ export default function SessionDuration() {
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           data={store.sessions}
-          width={261}
-          height={175}
           onMouseMove={mouseMove}
           onMouseOut={mouseOut}
         >
@@ -70,7 +68,7 @@ export default function SessionDuration() {
             dataKey="day"
             stroke="rgba(255, 255, 255, 0.6)"
             axisLine={false}
-            dy={10}
+            dy={15}
             tickLine={false}
             tickFormatter={formatXAxis}
             padding={{ left: 10, right: 10 }}

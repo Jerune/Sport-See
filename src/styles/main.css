@@ -196,6 +196,7 @@ ul {
   width: 258px;
   position: relative;
   padding-top: 75px;
+  padding-bottom: 20px;
 }
 .sessionDuration h2 {
   position: absolute;
@@ -216,11 +217,6 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.recharts-surface {
-  padding: 0;
-  margin: 0;
 }
 
 .recharts-cartesian-axis-ticks {
@@ -290,6 +286,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 3px;
 }
 
 .score {

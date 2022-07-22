@@ -38,8 +38,6 @@ export default function Activity() {
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={store.activity}
-          width={820}
-          height={280}
           margin={{
             top: 10,
             right: 5,

@@ -15,7 +15,7 @@ export default function Performance() {
   return (
     <section className="performance">
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart width={280} height={263} data={store.performance}>
+        <RadarChart data={store.performance} outerRadius={92}>
           <PolarGrid radialLines={false} />
           <PolarAngleAxis
             dataKey="kind"
