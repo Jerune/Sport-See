@@ -1,11 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { StoreContext } from "../../providers/StoreProvider";
-import {
-  getUserData,
-  getSessionsData,
-  getActivityData,
-  getPerformanceData,
-} from "../../services/dataManager";
+import { getAPIData } from "../../services/dataManager";
 import Activity from "./Activity/Activity";
 import Nutrients from "./Nutrients/Nutrients";
 import SessionDuration from "./SessionDuration/SessionDuration";
@@ -13,14 +8,13 @@ import Performance from "./Performance/Performance";
 import Score from "./Score/Score";
 
 export default function Results({ id }) {
-  // @ts-ignore
   const [store] = useContext(StoreContext);
   useEffect(() => {
     const refreshData = async () => {
-      await getUserData(id);
-      await getActivityData(id);
-      await getSessionsData(id);
-      await getPerformanceData(id);
+      await getAPIData(id, "user");
+      await getAPIData(id, "activity");
+      await getAPIData(id, "sessions");
+      await getAPIData(id, "performance");
     };
     refreshData();
   }, [id]);

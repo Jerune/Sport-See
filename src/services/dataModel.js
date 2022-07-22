@@ -6,7 +6,7 @@ const data = {
       lastName: "",
       age: 0,
     },
-    score: 0.12,
+    score: 0.0,
     keyData: {
       calorieCount: 0,
       proteinCount: 0,

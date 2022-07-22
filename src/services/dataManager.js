@@ -1,40 +1,41 @@
 import { store } from "../providers/StoreProvider";
 
-async function getUserData() {
-  const response = await fetch(
-    "https://calm-gorge-80201.herokuapp.com/user/12"
-  );
-  const rawData = await response.json();
-  store.set({ user: rawData.data });
-}
+async function getAPIData(id, type) {
+  let apiURI = "";
+  switch (type) {
+    case "user":
+      apiURI = `https://calm-gorge-80201.herokuapp.com/user/${id}`;
+      break;
+    case "sessions":
+      apiURI = `https://calm-gorge-80201.herokuapp.com/user/${id}/average-sessions`;
+      break;
+    case "activity":
+      apiURI = `https://calm-gorge-80201.herokuapp.com/user/${id}/activity`;
+      break;
+    case "performance":
+      apiURI = `https://calm-gorge-80201.herokuapp.com/user/${id}/performance`;
+      break;
+    default:
+      apiURI = "";
+  }
 
-async function getSessionsData() {
-  const response = await fetch(
-    "https://calm-gorge-80201.herokuapp.com/user/12/average-sessions"
-  );
+  const response = await fetch(apiURI);
   const rawData = await response.json();
 
-  store.set({ sessions: rawData.data.sessions });
-}
-
-async function getActivityData() {
-  const response = await fetch(
-    "https://calm-gorge-80201.herokuapp.com/user/12/activity"
-  );
-  const rawData = await response.json();
-  store.set({ activity: rawData.data.sessions });
-}
-
-async function getPerformanceData() {
-  const response = await fetch(
-    "https://calm-gorge-80201.herokuapp.com/user/12/performance"
-  );
-  const rawData = await response.json();
-  const adjustedData = rawData.data.data.map((activity) => {
-    return { ...activity, kind: store.get.kind[activity.kind] };
+  let adjustedData = [];
+  if (type === "performance") {
+    adjustedData = rawData.data.data.map((activity) => {
+      return { ...activity, kind: store.get.kind[activity.kind] };
+    });
+  }
+  store.set({
+    [type]:
+      type === "user"
+        ? rawData.data
+        : type === "performance"
+        ? adjustedData.reverse()
+        : rawData.data.sessions,
   });
-
-  store.set({ performance: adjustedData.reverse() });
 }
 
-export { getUserData, getSessionsData, getActivityData, getPerformanceData };
+export { getAPIData };
