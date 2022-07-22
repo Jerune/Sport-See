@@ -8,6 +8,7 @@ import Performance from "./Performance/Performance";
 import Score from "./Score/Score";
 
 export default function Results({ id }) {
+  // @ts-ignore
   const [store] = useContext(StoreContext);
   useEffect(() => {
     const refreshData = async () => {

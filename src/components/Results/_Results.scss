@@ -26,10 +26,16 @@
 .charts{
     margin-top: 70px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     grid-template-areas: 
-    "activity activity activity nutrients"
-    "duration performance score nutrients";
+    "activity activity nutrients"
+    "duration performance score";
     gap: 30px;
+    @include responsive(1300px){
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+            "activity activity activity nutrients"
+            "duration performance score nutrients";
+    }
 }

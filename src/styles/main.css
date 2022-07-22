@@ -57,7 +57,7 @@ ul {
 }
 
 .asideNav {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -95,6 +95,11 @@ ul {
   text-orientation: sideways-right;
   transform: rotate(-180deg);
 }
+@media screen and (min-width: 1400px) {
+  .asideNav {
+    display: flex;
+  }
+}
 
 .main {
   display: flex;
@@ -124,10 +129,16 @@ ul {
 .charts {
   margin-top: 70px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
-  grid-template-areas: "activity activity activity nutrients" "duration performance score nutrients";
+  grid-template-areas: "activity activity nutrients" "duration performance score";
   gap: 30px;
+}
+@media screen and (min-width: 1300px) {
+  .charts {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "activity activity activity nutrients" "duration performance score nutrients";
+  }
 }
 
 .nutrients {
@@ -137,16 +148,19 @@ ul {
   justify-content: space-around;
 }
 .nutrients li {
-  width: 258px;
-  height: 124px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  padding-left: 32px;
-  margin-bottom: 39px;
   background-color: #FBFBFB;
   border-radius: 5px;
+}
+@media screen and (min-width: 1300px) {
+  .nutrients li {
+    padding-left: 32px;
+    margin-bottom: 39px;
+    height: 124px;
+  }
 }
 .nutrients li .icon {
   width: 60px;
@@ -193,7 +207,6 @@ ul {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
   border-radius: 5px;
   height: 263px;
-  width: 258px;
   position: relative;
   padding-top: 75px;
   padding-bottom: 20px;
@@ -230,7 +243,6 @@ ul {
   background-color: #FBFBFB;
   padding: 20px;
   position: relative;
-  width: 100%;
   height: 320px;
   border-radius: 5px;
 }

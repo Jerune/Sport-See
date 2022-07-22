@@ -1,5 +1,5 @@
 .asideNav{
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -34,5 +34,8 @@
         writing-mode: vertical-rl;
         text-orientation: sideways-right;    
         transform: rotate(-180deg);
+    }
+    @include responsive(1400px){
+        display: flex;
     }
 }

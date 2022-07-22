@@ -4,16 +4,17 @@
     flex-direction: column;
     justify-content: space-around;
     li{
-        width: 258px;
-        height: 124px;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
-        padding-left: 32px;
-        margin-bottom: 39px;
         background-color: $color-backgrounds;
         border-radius: 5px;
+        @include responsive(1300px){
+            padding-left: 32px;
+            margin-bottom: 39px;
+            height: 124px;
+        }
         
         .icon{
         width: 60px;
