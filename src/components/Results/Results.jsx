@@ -1,4 +1,6 @@
 import React, { useEffect, useContext, useState } from "react";
+import { Navigate } from "react-router-dom";
+import PropTypes from "prop-types";
 import { StoreContext } from "../../providers/StoreProvider";
 import { getAPIData } from "../../services/dataManager";
 import Activity from "./Activity/Activity";
@@ -6,7 +8,6 @@ import Nutrients from "./Nutrients/Nutrients";
 import SessionDuration from "./SessionDuration/SessionDuration";
 import Performance from "./Performance/Performance";
 import Score from "./Score/Score";
-import { Navigate } from "react-router-dom";
 
 export default function Results({ id }) {
   const [isLoading, setLoading] = useState(true);
@@ -53,3 +54,7 @@ export default function Results({ id }) {
     </section>
   );
 }
+
+Results.propTypes = {
+  id: PropTypes.string.isRequired,
+};
