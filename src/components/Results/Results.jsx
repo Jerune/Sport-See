@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import { StoreContext } from "../../providers/StoreProvider";
 import { getAPIData } from "../../services/dataManager";
 import Activity from "./Activity/Activity";
@@ -6,8 +6,10 @@ import Nutrients from "./Nutrients/Nutrients";
 import SessionDuration from "./SessionDuration/SessionDuration";
 import Performance from "./Performance/Performance";
 import Score from "./Score/Score";
+import { Navigate } from "react-router-dom";
 
 export default function Results({ id }) {
+  const [isLoading, setLoading] = useState(true);
   // @ts-ignore
   const [store] = useContext(StoreContext);
   useEffect(() => {
@@ -16,9 +18,22 @@ export default function Results({ id }) {
       await getAPIData(id, "activity");
       await getAPIData(id, "sessions");
       await getAPIData(id, "performance");
+      setLoading(false);
     };
     refreshData();
   }, [id]);
+
+  if (store.user === "error") {
+    return <Navigate to="/404" />;
+  }
+
+  if (isLoading) {
+    return (
+      <div className="wrapper">
+        <h2>Loading votre data...</h2>
+      </div>
+    );
+  }
 
   return (
     <section className="results">

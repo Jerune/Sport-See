@@ -38,6 +38,8 @@ async function getAPIData(id, type) {
     });
   } else {
     console.log("Error when trying to get data:", response.status);
+    store.set({ user: "error" });
+    console.log("Store has been set");
   }
 }
 
