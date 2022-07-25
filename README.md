@@ -1,5 +1,5 @@
 ![library-react](https://user-images.githubusercontent.com/76209231/169810015-87e342f6-ce87-4033-8e16-8194630f88e0.svg)
-![library-recharts](https://user-images.githubusercontent.com/76209231/169810257-b16891a3-8f04-4e3c-8e3a-68a81e8f642b.svg)
+![library-recharts](https://user-images.githubusercontent.com/76209231/169810257-b16891a3-8f04-4e3c-8e3a-68a81e8f642b.svg)\
 ![tool-create-react-app](https://user-images.githubusercontent.com/76209231/169812977-cf802d09-7b36-4b2c-97ab-143955aef1fa.svg)
 ![tool-sass](https://user-images.githubusercontent.com/76209231/169813018-fb083b76-0ea4-4a9c-816a-19786ccdd023.svg)
 
