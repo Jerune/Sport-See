@@ -36,6 +36,16 @@ You may also see any lint errors in the console.
 
 *There are 2 users available in the API (user 12 & user 18)*
 
+## Scripts & Libraries
+
+This project uses a few scripts and libraries to be able to function correctly:
+#### Sass
+Styles are compiled using Sass. Every component has its own Sass file.
+#### Recharts
+All Charts are comfigured using the Recharts library. For documentation please refer to the [https://recharts.org/en-US/api](recharts.org official documentation)
+#### ESLint & Prettier
+The project uses a combination of ESLint & Prettier in the eslint-plugin-prettier extention for cleaner code. ESLint is configured as Create-React-App standards.
+
 ### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
