@@ -32,7 +32,7 @@
         font-size: 0.75rem;
         display: flex;
         writing-mode: vertical-rl;
-        text-orientation: sideways-right;    
+        text-orientation:  sideways;   
         transform: rotate(-180deg);
     }
     @include responsive(1400px){
