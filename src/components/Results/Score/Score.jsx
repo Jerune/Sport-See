@@ -6,20 +6,36 @@ import {
   PolarAngleAxis,
 } from "recharts";
 import { StoreContext } from "../../../providers/StoreProvider";
-
+/**
+ * RadialBarChart with attained user score percentage over 100%
+ *
+ * @return  {React.ReactElement}  Score component
+ */
 export default function Score() {
   // @ts-ignore
   const [store] = useContext(StoreContext);
+  /**
+   * Stores score from user as Array (requirement from ReCharts)
+   *
+   * @var {Array}
+   */
   const ScoreData = [
     {
       score: store.user.score,
     },
   ];
-
+  /**
+   * Transforms decimal score string into number
+   *
+   * @param   {Array}  data  user array with score object
+   *
+   * @return  {number}        number to be used for score component
+   */
   function calculatePercent(data) {
     const score = Number(data[0].score);
     return Math.round(score * 100);
   }
+  /** Saves transformed user score in variable */
   const scorePercent = calculatePercent(ScoreData);
 
   return (

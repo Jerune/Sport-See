@@ -4,6 +4,11 @@ import swimIcon from "../../assets/icons/swim-icon.png";
 import bikeIcon from "../../assets/icons/bike-icon.png";
 import weightsIcon from "../../assets/icons/weights-icon.png";
 
+/**
+ * Vertical navigation bar
+ *
+ * @return  {React.ReactElement}  AsideNav component
+ */
 export default function AsideNav() {
   return (
     <aside className="asideNav">

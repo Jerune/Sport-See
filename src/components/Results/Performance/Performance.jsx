@@ -8,6 +8,11 @@ import {
 } from "recharts";
 import { StoreContext } from "../../../providers/StoreProvider";
 
+/**
+ * RadarChart with performance data
+ *
+ * @return  {React.ReactElement}  Performance component
+ */
 export default function Performance() {
   // @ts-ignore
   const [store] = useContext(StoreContext);

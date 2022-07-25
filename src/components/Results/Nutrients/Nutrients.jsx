@@ -7,9 +7,15 @@ import proteinesIcon from "../../../assets/icons/proteines-icon.png";
 import carbsIcon from "../../../assets/icons/carbs-icon.png";
 import fatsIcon from "../../../assets/icons/fats-icon.png";
 
+/**
+ * Nutrients overview
+ *
+ * @return  {React.ReactElement}  Nutrients component with unordered list of data blocks
+ */
 export default function Nutrients() {
   // @ts-ignore
   const [store] = useContext(StoreContext);
+  /** Stores Array for key userData */
   const nutrientsData = store.user.keyData;
 
   return (

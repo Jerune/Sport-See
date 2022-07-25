@@ -1,5 +1,9 @@
 import React from "react";
-
+/**
+ * 404 Page
+ *
+ * @return  {React.ReactElement}  NotFound component
+ */
 export default function NotFound() {
   return (
     <div className="wrapper">

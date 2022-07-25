@@ -12,14 +12,34 @@ import {
 } from "recharts";
 import { StoreContext } from "../../../providers/StoreProvider";
 
+/**
+ * Daily Activity BarChart
+ *
+ * @return  {React.ReactElement}  Activity component with weight & calories data as BarChart
+ */
 export default function Activity() {
   // @ts-ignore
   const [store] = useContext(StoreContext);
 
+  /**
+   * Sets value of ticks in BarChart
+   *
+   * @param   {string}  value  receives date formatted string
+   *
+   * @return  {Array}         Numbers of the day
+   */
   function xAxisTickFormat(value) {
     return value.split("-")[2].split("0")[1];
   }
 
+  /**
+   * Custom Tooltip for BarChart
+   *
+   * @param   {Array}  payload  array of objects from data
+   * @param   {Boolean}  active   state onHover for tooltip
+   *
+   * @return  {React.ReactElement}           Tooltip with kg and Kcal values for specific day
+   */
   function CustomTooltip({ payload, active }) {
     if (active) {
       return (

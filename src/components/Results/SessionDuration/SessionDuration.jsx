@@ -2,11 +2,23 @@
 import { StoreContext } from "../../../providers/StoreProvider";
 import React, { useContext } from "react";
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts";
-
+/**
+ * LineChart with average session user data
+ *
+ * @return  {React.ReactElement}  SessionDuration component
+ */
 export default function SessionDuration() {
   const [store] = useContext(StoreContext);
 
-  const CustomTooltip = ({ active, payload }) => {
+  /**
+   * Custom Tooltip for LineChart
+   *
+   * @param   {Array}  payload  array of objects from data
+   * @param   {Boolean}  active   state onHover for tooltip
+   *
+   * @return  {React.ReactElement}           Tooltip with kg and Kcal values for specific day
+   */
+  function CustomTooltip({ active, payload }) {
     if (active && payload && payload.length) {
       return (
         <div className="tooltip">
@@ -16,8 +28,14 @@ export default function SessionDuration() {
     }
 
     return null;
-  };
-
+  }
+  /**
+   * Format ticks to days of the week
+   *
+   * @param   {string}  tickItem  automatic tick value
+   *
+   * @return  {string}            replacement tick value
+   */
   function formatXAxis(tickItem) {
     switch (tickItem) {
       case 1:
@@ -41,6 +59,13 @@ export default function SessionDuration() {
 
   const sessionElement = document.querySelector(".sessionDuration");
 
+  /**
+   * Calulates mouse cursor position and adds styling to sessionDuration container
+   *
+   * @param   {object}  e  mouseMove event data
+   *
+   * @return  {style}     Background gradient style
+   */
   function mouseMove(e) {
     if (e.isTooltipActive) {
       let windowWidth = sessionElement.offsetWidth;
@@ -50,7 +75,11 @@ export default function SessionDuration() {
       sessionElement.style.background = `linear-gradient(90deg, rgba(255,0,0,1) ${mouseXpercent}%, rgba(230,1,0,1) ${mouseXpercent}%`;
     }
   }
-
+  /**
+   * Resets background style of sessionDuration container on MouseOut event
+   *
+   * @return  {style}  Background style
+   */
   function mouseOut() {
     sessionElement.style.background = "#FF0101";
   }
@@ -85,11 +114,7 @@ export default function SessionDuration() {
               r: 3,
             }}
           />
-          <Tooltip
-            // @ts-ignore
-            content={<CustomTooltip />}
-            cursor={false}
-          />
+          <Tooltip content={<CustomTooltip />} cursor={false} />
         </LineChart>
       </ResponsiveContainer>
     </section>
