@@ -73,5 +73,5 @@ export default function Results({ id }) {
 }
 
 Results.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
 };
