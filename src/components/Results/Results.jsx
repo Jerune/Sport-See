@@ -1,8 +1,10 @@
 import React, { useEffect, useContext, useState } from "react";
+import Config from "../../config.json";
 import { Navigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import { StoreContext } from "../../providers/StoreProvider";
 import { getAPIData } from "../../services/dataManager";
+import { getAPIData as getAPIDataMock } from "../../services/dataManagerMock";
 import Activity from "./Activity/Activity";
 import Nutrients from "./Nutrients/Nutrients";
 import SessionDuration from "./SessionDuration/SessionDuration";
@@ -30,10 +32,17 @@ export default function Results({ id }) {
      * @function refreshData
      */
     const refreshData = async () => {
-      await getAPIData(id, "user");
-      await getAPIData(id, "activity");
-      await getAPIData(id, "sessions");
-      await getAPIData(id, "performance");
+      if (Config.mode === "prod") {
+        await getAPIData(id, "user");
+        await getAPIData(id, "activity");
+        await getAPIData(id, "sessions");
+        await getAPIData(id, "performance");
+      } else {
+        await getAPIDataMock(id, "user");
+        await getAPIDataMock(id, "activity");
+        await getAPIDataMock(id, "sessions");
+        await getAPIDataMock(id, "performance");
+      }
       setLoading(false);
     };
     refreshData();
