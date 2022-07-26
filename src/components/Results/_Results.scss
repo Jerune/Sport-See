@@ -7,35 +7,44 @@
 .results{
     display: flex;
     flex-direction: column;
-    padding: 50px 90px;
+    padding: 30px 70px;
     width: 100%;
     &_title{
-        font-size: 3rem;
+        font-size: 2rem;
         font-weight: 500;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         span{
             color: $color-primary;
+        }
+        @include responsive(1300px){
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
     }
     &_subTitle{
         font-size: 1.125rem;
         font-weight: 400;
     }
+    @include responsive(1300px){
+        padding: 50px 90px;
+    }
 }
 
 .charts{
-    margin-top: 70px;
+    margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     grid-template-areas: 
     "activity activity nutrients"
     "duration performance score";
-    gap: 30px;
+    gap: 15px;
     @include responsive(1300px){
+        margin-top: 70px;
         grid-template-columns: repeat(4, 1fr);
         grid-template-areas: 
             "activity activity activity nutrients"
             "duration performance score nutrients";
+        gap: 30px;
     }
 }

@@ -60,19 +60,31 @@ ul {
 
 .headerNav {
   background-color: black;
-  min-height: 91px;
-  height: 10%;
+  min-height: 55px;
+  height: auto;
+  font-size: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   color: white;
-  font-size: 1.5rem;
-  font-weight: 500;
   padding: 0 87px 0 26px;
 }
 .headerNav img {
-  height: 57px;
+  height: 35px;
+}
+@media screen and (min-width: 1300px) {
+  .headerNav img {
+    height: 57px;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .headerNav {
+    min-height: 91px;
+    height: 10%;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
 }
 
 .asideNav {
@@ -129,34 +141,47 @@ ul {
 .results {
   display: flex;
   flex-direction: column;
-  padding: 50px 90px;
+  padding: 30px 70px;
   width: 100%;
 }
 .results_title {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 500;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .results_title span {
   color: #FF0101;
+}
+@media screen and (min-width: 1300px) {
+  .results_title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
 }
 .results_subTitle {
   font-size: 1.125rem;
   font-weight: 400;
 }
+@media screen and (min-width: 1300px) {
+  .results {
+    padding: 50px 90px;
+  }
+}
 
 .charts {
-  margin-top: 70px;
+  margin-top: 30px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   grid-template-areas: "activity activity nutrients" "duration performance score";
-  gap: 30px;
+  gap: 15px;
 }
 @media screen and (min-width: 1300px) {
   .charts {
+    margin-top: 70px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: "activity activity activity nutrients" "duration performance score nutrients";
+    gap: 30px;
   }
 }
 

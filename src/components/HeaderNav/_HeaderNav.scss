@@ -1,16 +1,24 @@
 .headerNav{
     background-color: black;
-    min-height: 91px;
-    height: 10%;
+    min-height: 55px;
+    height: auto;
+    font-size: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     color: white;
-    font-size: 1.5rem;
-    font-weight: 500;
     padding: 0 87px 0 26px;
     img{
-        height: 57px;
+        height: 35px;
+        @include responsive(1300px){
+            height: 57px;
+        }
+    }
+    @include responsive(1300px){
+        min-height: 91px;
+        height: 10%;
+        font-size: 1.5rem;
+        font-weight: 500;
     }
 }
