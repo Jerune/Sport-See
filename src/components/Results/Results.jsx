@@ -37,11 +37,8 @@ export default function Results({ id }) {
         await getAPIData(id, "activity");
         await getAPIData(id, "sessions");
         await getAPIData(id, "performance");
-      } else {
-        await getAPIDataMock(id, "user");
-        await getAPIDataMock(id, "activity");
-        await getAPIDataMock(id, "sessions");
-        await getAPIDataMock(id, "performance");
+      } else if (Config.mode === "dev") {
+        await getAPIDataMock(id);
       }
       setLoading(false);
     };
