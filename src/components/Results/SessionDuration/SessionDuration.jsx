@@ -57,8 +57,6 @@ export default function SessionDuration() {
     }
   }
 
-  const sessionElement = document.querySelector(".sessionDuration");
-
   /**
    * Calulates mouse cursor position and adds styling to sessionDuration container
    *
@@ -67,6 +65,7 @@ export default function SessionDuration() {
    * @return  {style}     Background gradient style
    */
   function mouseMove(e) {
+    const sessionElement = document.querySelector(".sessionDuration");
     if (e.isTooltipActive) {
       let windowWidth = sessionElement.offsetWidth;
       let mouseXpercent = Math.floor(
@@ -81,6 +80,7 @@ export default function SessionDuration() {
    * @return  {style}  Background style
    */
   function mouseOut() {
+    const sessionElement = document.querySelector(".sessionDuration");
     sessionElement.style.background = "#FF0101";
   }
 
